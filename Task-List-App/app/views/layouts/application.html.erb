@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+  <h1>Super Cool Task List App</h1>
+  <title>Super Cool Task List App Title</title>
+</header>
+
+<head>
+  <title>TaskListApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+
+<%= render "layouts/sidebar" %>
+<div class="main">
+  <%= yield %>
+</div>
+
+</body>
+
+<footer>
+<p>
+  Footer information: fun facts about feet go here
+</p>
+</footer>
+
+</html>
