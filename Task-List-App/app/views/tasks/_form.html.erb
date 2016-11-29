@@ -31,6 +31,12 @@
     <%= f.label :task_list_id %><br>
     <%= f.collection_select :task_list_id, TaskList.all, :id, :name, prompt:true %>
   </div>
+
+  <div class="field">
+    <%= f.label :is_completed %><br>
+    <%= f.check_box :is_completed %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

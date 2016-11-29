@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h2>Pending Tasks</h2>
 
 <table>
   <thead>
@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @tasks.each do |task| %>
+    <% @pending_tasks.each do |task| %>
       <tr>
         <td><%= task.title %></td>
         <td><%= task.description %></td>
@@ -29,6 +29,32 @@
     <% end %>
   </tbody>
 </table>
+
+<h2>Completed Tasks</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Due date</th>
+        <th>Task list</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @completed_tasks.each do |task| %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.description %></td>
+          <td><%= task.priority %></td>
+          <td><%= task.due_date %></td>
+          <td><%= task.task_list %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br>
 

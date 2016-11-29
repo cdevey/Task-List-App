@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102214419) do
+ActiveRecord::Schema.define(version: 20161129223406) do
 
   create_table "task_lists", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "is_private",  default: false
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -26,8 +27,9 @@ ActiveRecord::Schema.define(version: 20161102214419) do
     t.integer  "priority"
     t.date     "due_date"
     t.integer  "task_list_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "is_completed", default: false
   end
 
   add_index "tasks", ["task_list_id"], name: "index_tasks_on_task_list_id"
