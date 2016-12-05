@@ -2,5 +2,12 @@
   <ul>
     <li><%= link_to 'Task List', '/task_lists' %></li>
     <li><%= link_to 'Tasks', '/tasks' %></li>
+    <li>
+      <% if session[:user_id] %>
+        <%= link_to 'Logout', logout_path %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        <% end %>
+    </li>
   </ul>
 </div>
